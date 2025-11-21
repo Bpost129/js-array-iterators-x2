@@ -81,7 +81,7 @@ const regularPeople = people.map(person => {
   return regPerson.reverse().join(' ')
 })
 
-console.log(regularPeople)
+// console.log(regularPeople)
 
 const data = [
   'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
@@ -92,7 +92,17 @@ const data = [
 // 7. Count the number of instances for each of the data items.
 // Hint: Return an object where the keys are 'car', 'truck', etc., and the value is the total number of times each data item appears.
 
+const inventory = data.reduce((prev, item) => {
+  if (prev[item]) {
+    prev[item] += 1
+  } else {
+    prev[item] = 1
+  }
 
+  return prev
+}, {})
+
+console.log(inventory)
 
 const devs = [
   { name: 'Wes', year: 1988 },
