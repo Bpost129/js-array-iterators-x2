@@ -114,12 +114,16 @@ const devs = [
 // Array.prototype.some()
 // 8. Check if at least one person is 19 or older.
 
+const someoneOlderThan19 = devs.some(dev => 2024 - dev.year >= 19)
 
+console.log(someoneOlderThan19)
 
 // Array.prototype.every()
 // 9. Check if everyone is 19 or older.
 
+const everyoneOlderThan19 = devs.every(dev => 2024 - dev.year >= 19)
 
+console.log(everyoneOlderThan19)
 
 const comments = [
   { text: 'Love this!', id: 523423 },
