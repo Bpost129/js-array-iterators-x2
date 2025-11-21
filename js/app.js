@@ -48,12 +48,16 @@ inventors.sort((a,b) => {
   return (a.passed - a.year) - (b.passed - b.year)
 })
 
-console.log(inventors)
+// console.log(inventors)
 
 // Array.prototype.reduce()
 // 5. Find how many years all the inventors lived combined.
 
+const yearsLived = inventors.reduce((prev, inv) => {
+  return prev + (inv.passed - inv.year)
+}, 0)
 
+console.log(yearsLived)
 
 const people = [
   'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry',
@@ -72,7 +76,12 @@ const people = [
 // Array.prototype.map()
 // 6. Map the people array such that the new array consists of strings with the names formatted as "First Last", e.g., "Becker, Carl" should be mapped to "Carl Becker".
 
+const regularPeople = people.map(person => {
+  let regPerson = person.split(', ')
+  return regPerson.reverse().join(' ')
+})
 
+console.log(regularPeople)
 
 const data = [
   'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van',
